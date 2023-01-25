@@ -16,6 +16,7 @@ class LandingPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: MediaQuery.of(context).size.height * .1),
               Text('AI meets the \nstock market',
                   style: TextStyle(
                       color: darkBizaarBlue,
@@ -48,8 +49,9 @@ class LandingPage extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        Container(
           width: MediaQuery.of(context).size.width * .45,
+          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .08),
           child: const Center(
             child: FadeInImage(
               placeholder: AssetImage('images/blank_image.png'),

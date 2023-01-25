@@ -1,8 +1,7 @@
 import 'package:bizaar_ai_dot_com/screens/landing_page.dart';
 import 'package:bizaar_ai_dot_com/widgets/home_back_drop.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/services.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -19,6 +18,9 @@ class Home extends StatelessWidget {
             width: 50,
             child: Image.asset('images/bizaar_ai_logo_white.png')),
         centerTitle: false,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+            systemNavigationBarColor: Colors.white,
+            statusBarColor: Colors.white),
       ),
       body: Stack(
         children: const [

@@ -20,6 +20,7 @@ class BizaarAiDotCom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'Bizaar AI',
       debugShowCheckedModeBanner: false,
       home: Home(),
     );

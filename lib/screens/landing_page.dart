@@ -50,8 +50,11 @@ class LandingPage extends StatelessWidget {
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * .45,
-          child: Center(
-            child: Image.asset('images/screenshot.png'),
+          child: const Center(
+            child: FadeInImage(
+              placeholder: AssetImage('images/blank_image.png'),
+              image: AssetImage('images/screenshot.png'),
+            ),
           ),
         ),
       ],

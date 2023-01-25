@@ -22,7 +22,7 @@ class HomeBackDrop extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          stops: const [0.3, 0.5, 0.7, 0.8],
+          stops: const [0.2, 0.5, 0.8, 0.95],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: <Color>[

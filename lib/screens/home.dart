@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
         mediumScreen: Stack(
           children: const [
             HomeBackDrop(),
-            LandingPage(),
+            MobileWebLandingPage(),
           ],
         ),
         largeScreen: Stack(

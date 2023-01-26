@@ -1,7 +1,9 @@
 import 'package:bizaar_ai_dot_com/constants/colors.dart';
-import 'package:bizaar_ai_dot_com/screens/privacy_policy.dart';
+import 'package:bizaar_ai_dot_com/responsiveness/responsiveness.dart';
+import 'package:bizaar_ai_dot_com/routing/route_constants.dart';
 import 'package:bizaar_ai_dot_com/widgets/store_download_buttons_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MobileWebLandingPage extends StatelessWidget {
   const MobileWebLandingPage({super.key});
@@ -33,7 +35,9 @@ class MobileWebLandingPage extends StatelessWidget {
             const StoreDownloadButtonsWidget(),
             SizedBox(height: MediaQuery.of(context).size.height * .025),
             SizedBox(
-              width: MediaQuery.of(context).size.width * .85,
+              width: ResponsiveWidget.isMediumScreen(context)
+                  ? MediaQuery.of(context).size.width * .5
+                  : MediaQuery.of(context).size.width * .85,
               child: const Center(
                 child: FadeInImage(
                   placeholder: AssetImage('images/blank_image.png'),
@@ -43,11 +47,7 @@ class MobileWebLandingPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const PrivacyPolicy()),
-                );
+                context.pushNamed(RouteConstants.privacyPolicy);
               },
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 7),

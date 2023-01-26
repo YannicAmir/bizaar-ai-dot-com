@@ -1,11 +1,11 @@
 {
-    "name": "bizaar_ai_dot_com",
-    "short_name": "bizaar_ai_dot_com",
+    "name": "Bizaar AI",
+    "short_name": "Bizaar AI",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "At Bizaar AI, you get free, in-depth company data, stock quotes, and answers to your stock market questions.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

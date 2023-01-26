@@ -1,5 +1,6 @@
 import 'package:bizaar_ai_dot_com/constants/colors.dart';
 import 'package:bizaar_ai_dot_com/constants/privacy_policy_statement.dart';
+import 'package:bizaar_ai_dot_com/responsiveness/responsiveness.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPolicy extends StatelessWidget {
@@ -25,9 +26,13 @@ class PrivacyPolicy extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               alignment: Alignment.centerLeft,
               child: SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: Image.asset('images/bizaar_ai_logo_white.png')),
+                height: ResponsiveWidget.isSmallScreen(context) ? 35 : 50,
+                width: ResponsiveWidget.isSmallScreen(context) ? 35 : 50,
+                child: const FadeInImage(
+                  placeholder: AssetImage('images/blank_image.png'),
+                  image: AssetImage('images/bizaar_ai_logo_white.png'),
+                ),
+              ),
             ),
             Container(
               height: MediaQuery.of(context).size.height * .2,
@@ -47,7 +52,9 @@ class PrivacyPolicy extends StatelessWidget {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height * 1.5,
+              height: ResponsiveWidget.isSmallScreen(context)
+                  ? MediaQuery.of(context).size.height * 2.7
+                  : MediaQuery.of(context).size.height * 1.5,
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * .15),
               margin: EdgeInsets.symmetric(

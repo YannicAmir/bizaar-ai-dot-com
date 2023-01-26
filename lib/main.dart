@@ -1,7 +1,7 @@
+import 'package:bizaar_ai_dot_com/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'screens/home.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,9 +9,9 @@ void main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-  runApp(
-    const BizaarAiDotCom(),
-  );
+  runApp(const BizaarAiDotCom());
+
+  setUrlStrategy(PathUrlStrategy());
 }
 
 class BizaarAiDotCom extends StatelessWidget {
@@ -19,10 +19,11 @@ class BizaarAiDotCom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
       title: 'Bizaar AI',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      routeInformationParser: AppRouter().router.routeInformationParser,
+      routerDelegate: AppRouter().router.routerDelegate,
     );
   }
 }
